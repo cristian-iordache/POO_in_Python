@@ -50,7 +50,7 @@ stock=[car1, car2, car3, car4, car5]
 
 model=Automobil('Mercedes-Benz', 'E-Class', 000, 'Caro', 'Color', 000000, True, stock)
 # print(model1.inStock(car5))
-model.rmModel(car2)
+model.rm_model(car2)
 model.inStock(car3, stock)
 
-model.modeleDisponibile()
+model.modele_disponibile()
