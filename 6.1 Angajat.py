@@ -30,10 +30,12 @@ class Angajat:
     def __add__(self, other):
         return self.vechime + other.vechime
 
+    # daca adaugam property, putem folosi metoda ca un atribut
     @property
     def nume_vechime(self):
-        return self.nume + ' ' + self.vechime
+        return self.nume + ' -> ' + self.vechime
 
+    # numele metodei trebuie sa fie la fel ca cel al setter-ului
     @nume_vechime.setter
     def nume_vechime(self, nv):
         nume, vech = nv.split(' ')
@@ -46,9 +48,9 @@ class Angajat:
         self.nume = None
         self.vechime = None
 
-ang1 = Angajat('Marian', 'M', 45, 10, True)
-ang2 = Angajat('Victor', 'M', 35, 15, False)
-ang3 = Angajat('Andreea', 'F', 25, 5, True)
+ang1 = Angajat('Marian', 'M', '45', '10', True)
+ang2 = Angajat('Victor', 'M', '35', '15', False)
+ang3 = Angajat('Andreea', 'F', '25', '5', True)
 
 # print(ang1.statusAngajare())
 # print(ang2.statusAngajare())
@@ -84,16 +86,15 @@ class Manager(Angajat):
 main1 = Manager('Admin', 'ADM', 45, 25, True, [ang1])
 main1.addAngajat(ang2)
 main1.printAngajat()
-# print('STOP')
-# print(main1.addAngajat(ang3))
-ang1 = Angajat('Marian', 'M', 45, 10, True)
-ang2 = Angajat('Victor', 'M', 35, 15, False)
-# print(ang1 + ang2)
 
-ang1.nume_vechime = 'Vlad 23'
+
+print(ang1.nume_vechime)
+ang1.nume = 'Vlad'
+print(ang1.nume_vechime)
+ang1.nume_vechime = 'Virgil 30'
 print(ang1.nume_vechime)
 print(ang1.nume)
 print(ang1.vechime)
 del ang1.nume_vechime
 print(ang1.nume)
-print(ang1.vechime)
+
