@@ -19,9 +19,10 @@ class Robot:
 
 #r1 - instanta a clasei Robot
 r1 = Robot('John', '12333', 'i5', 'Python', True)
-print(r1.serialNumber)
+# print(r1.serialNumber)
 print(r1.sleep)
 print(r1.turnOn())
-# print(Robot.turnOn(r1))
+print(Robot.turnOn(r1))
 print(r1.sleep)
 
+# r1.turnOn()
