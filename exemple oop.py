@@ -10,7 +10,7 @@ class Automobil():
         self.stock = stock
 
     def discount(self):
-        if self.areDiscount == True:
+        if self.areDiscount:
             pret = self.pret - self.pret*0.19
             return pret
 
@@ -22,18 +22,19 @@ class Automobil():
             print(f'Modelul {id.marca} {id.model} nu este disponibil. Este nevoie de o comanda.')
             print('-' * 10)
 
-    def modeleDisponibile(self):
+    def modele_disponibile(self):
         for i in self.stock:
             print(i.marca, i.model, i.putere, i.caroserie)
             # print('-' * 10)
 
-    def rmModel(self, id):
-        if id in self.stock:
-            self.stock.remove(id)
-            print(f'Modelul {id.marca} {id.model} a fost scos cu succes din stock.')
+    def rm_model(self, mod):
+        if mod in self.stock:
+            self.stock.remove(mod)
+            print(f'Modelul {mod.marca} {mod.model} a fost scos cu succes din stock.')
             print('-' * 10)
 
 # ------------------------------------------------------------------------------------------------------------
+
 
 car1 = Automobil('Mercedes-Benz', 'E Class', 240, 'Coupe', 'Matte Black', 89000, True)
 car2 = Automobil('Mercedes-Benz', 'C Class', 220, 'Coupe', 'Matte Black', 79000, True)
