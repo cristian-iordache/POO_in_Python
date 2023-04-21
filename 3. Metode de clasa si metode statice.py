@@ -28,7 +28,7 @@ class Robot:
         else:
             print(f"{self.nume} has {self.garantie - self.age} years till end of life")
 
-    # metoda clasei - keyword cls va fi inlocuit de numele clasei
+    # metoda clasei - keyword cls va fi inlocuit de numele clasei - primesc ca prin argument clasa si nu instanta
     @classmethod
     def seteazaGarantie(cls, ani):
         cls.garantie = ani
@@ -53,10 +53,10 @@ Robot.seteazaGarantie(7)
 # print(r2.garantie)
 
 robotAttributes = ('Techie', '33333', 'M1', 'Python', True, 2)
-nume, serialNumber, hardware, software, sleep, age = robotAttributes
-r3 = Robot(nume, serialNumber, hardware, software, sleep, age)
+# nume, serialNumber, hardware, software, sleep, age = robotAttributes
+# r3 = Robot(nume, serialNumber, hardware, software, sleep, age)
 
-print(r3.serialNumber)
+# print(r3.serialNumber)
 
 r4 = Robot.fromList(robotAttributes)
 print(r4.nume)
